@@ -2,6 +2,8 @@
 
 图文并茂的澳大利亚旅行计划（悉尼 → 凯恩斯 → 墨尔本），含静态中文景点地图。
 
+墨尔本段（2026/10/3–10/7）按小时深调研见 [`melbourne-oct3-7-research.md`](./melbourne-oct3-7-research.md)：机场交通、Free Tram/myki、QVM 开闭、反向大洋路选团、2 卧床型候选与来源 URL。
+
 ## 本地打开
 
 直接用浏览器打开：
