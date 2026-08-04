@@ -2,7 +2,11 @@
 
 图文并茂的澳大利亚旅行计划（悉尼 → 凯恩斯 → 墨尔本），含静态中文景点地图。
 
-墨尔本段（2026/10/3–10/7）按小时深调研见 [`melbourne-oct3-7-research.md`](./melbourne-oct3-7-research.md)：机场交通、Free Tram/myki、QVM 开闭、反向大洋路选团、2 卧床型候选与来源 URL。
+## 分段深调研
+
+- 悉尼段（2026/9/25–9/29）：[`sydney-sep2026-research.md`](./sydney-sep2026-research.md) — 按小时路线、Opal/机场、2 卧候选、蓝山跟团判断、Manly 雨备、餐饮预约与来源 URL
+- 凯恩斯段：[`cairns-research-sep-oct-2026.md`](./cairns-research-sep-oct-2026.md)
+- 墨尔本段（2026/10/3–10/7）：[`melbourne-oct3-7-research.md`](./melbourne-oct3-7-research.md)
 
 ## 本地打开
 
@@ -25,6 +29,6 @@ cd australia-guide && python3 -m http.server 8080
 - 12 天轻松节奏日程（图文对照）
 - 悉尼 / 凯恩斯与圣灵 / 墨尔本 / 总览静态景点地图
 - 单人花销参考与实用贴士
-- 凯恩斯段深入调研：`cairns-research-sep-oct-2026.md`（外礁船对比、Skyrail 2026 改造、住宿/交通/餐饮、来源 URL）
+- 各城深入调研 Markdown（含官方与中文游记来源，不虚构实时房价）
 
 地图为页面内置 SVG，不需要联网或第三方地图组件。景点配图来自 Unsplash。
