@@ -38,7 +38,7 @@
 
 ### 1.3 入境
 
-- 中国护照旅客需事先办 **ETA / 签证**（官方 AustralianETA App 或 ImmiAccount）。中文攻略共识：[Cosmopolitan HK 悉尼攻略](https://www.cosmopolitan.com.hk/lifestyle/sydney-travel)、[Footprint Backup](https://footprintbackup.com/sydney-travel-guide/)。
+- 中国大陆普通护照通常不适用 ETA；本行程按你正在办理的 **Visitor visa（subclass 600）**，通过 ImmiAccount 申请。资格与材料以澳大利亚内政部为准。
 - 不在此虚构办理时长与费用；以澳大利亚内政部实时页面为准。
 
 ---
@@ -288,7 +288,7 @@
 ### 9.1 建议提前订
 
 1. 国际机票（9/24 夜航）+ 9/29 悉尼→凯恩斯国内段  
-2. ETA/签证  
+2. Visitor visa（subclass 600）  
 3. **2 卧公寓 4 晚**（写明 Queen + 2 Single）  
 4. **蓝山一日游**（9/28）  
 5. 想吃的 **Mr. Wong / Chin Chin / Icebergs**  
