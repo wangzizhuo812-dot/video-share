@@ -23,5 +23,6 @@ cd australia-guide && python3 -m http.server 8080
 - 12 天轻松节奏日程（图文对照）
 - 悉尼 / 凯恩斯与圣灵 / 墨尔本 / 总览静态景点地图
 - 单人花销参考与实用贴士
+- 凯恩斯段深入调研：`cairns-research-sep-oct-2026.md`（外礁船对比、Skyrail 2026 改造、住宿/交通/餐饮、来源 URL）
 
 地图为页面内置 SVG，不需要联网或第三方地图组件。景点配图来自 Unsplash。
