@@ -287,6 +287,122 @@ a {
   background: linear-gradient(transparent, rgba(8, 40, 50, 0.75));
 }
 
+/* PERSONALISED PLAN */
+.personal-plan {
+  max-width: 1180px;
+}
+
+.plan-alert {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 1rem;
+  padding: 1.1rem 1.25rem;
+  margin-bottom: 1.5rem;
+  color: var(--ink-soft);
+  background: rgba(224, 138, 46, 0.11);
+  border-left: 4px solid var(--coral);
+}
+
+.plan-alert strong {
+  color: var(--ink);
+}
+
+.date-plan {
+  border-top: 1px solid var(--line);
+  margin-bottom: 2.5rem;
+}
+
+.date-row {
+  display: grid;
+  grid-template-columns: 112px 1fr 84px;
+  gap: 1.25rem;
+  align-items: start;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.date-row time {
+  color: var(--sea-deep);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.date-row strong {
+  display: block;
+  margin-bottom: 0.2rem;
+  color: var(--ink);
+}
+
+.date-row p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+}
+
+.date-row .pace {
+  justify-self: end;
+  padding: 0.25rem 0.45rem;
+  color: var(--sea-deep);
+  background: rgba(10, 124, 140, 0.09);
+  border: 1px solid rgba(10, 124, 140, 0.22);
+  font-size: 0.76rem;
+  white-space: nowrap;
+}
+
+.date-row.big .pace {
+  color: #8f4e0b;
+  background: rgba(224, 138, 46, 0.11);
+  border-color: rgba(224, 138, 46, 0.3);
+}
+
+.date-row.travel .pace {
+  color: #5f4a70;
+  background: rgba(142, 120, 158, 0.1);
+  border-color: rgba(142, 120, 158, 0.28);
+}
+
+.planning-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.planning-card {
+  padding: 1.4rem;
+  background: rgba(255, 255, 255, 0.64);
+  border-top: 3px solid var(--sea);
+}
+
+.planning-card h3 {
+  margin: 0 0 0.85rem;
+  font-family: var(--font-display);
+  color: var(--sea-deep);
+  font-size: 1.3rem;
+}
+
+.planning-card ul,
+.planning-card ol {
+  margin: 0 0 1rem;
+  padding-left: 1.15rem;
+  color: var(--ink-soft);
+}
+
+.planning-card li {
+  margin-bottom: 0.48rem;
+}
+
+.planning-card li strong {
+  color: var(--ink);
+}
+
+.card-note {
+  margin: 0;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--line);
+  color: var(--sea);
+  font-size: 0.86rem;
+}
+
 /* FOCUS RESEARCH */
 .focus-block {
   display: grid;
@@ -752,6 +868,10 @@ tr.total td {
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
+  .planning-grid {
+    grid-template-columns: 1fr;
+  }
+
   .overview-grid {
     grid-template-columns: 1fr;
   }
@@ -785,6 +905,26 @@ tr.total td {
 
   .route-strip .arrow {
     display: none;
+  }
+
+  .plan-alert {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+
+  .date-row {
+    grid-template-columns: 1fr auto;
+    gap: 0.3rem 0.75rem;
+  }
+
+  .date-row > div {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  .date-row .pace {
+    grid-column: 2;
+    grid-row: 1;
   }
 
   .static-map {
