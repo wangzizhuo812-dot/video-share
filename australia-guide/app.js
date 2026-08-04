@@ -35,6 +35,13 @@ const PLACES = {
         tip: "走到 Mrs Macquarie’s Chair 看歌剧院侧影，黄昏很美。",
       },
       {
+        name: "The Rocks 岩石区",
+        lat: -33.8599,
+        lng: 151.209,
+        day: "Day 1–2",
+        tip: "海港旁老街区，适合慢逛、吃饭，和歌剧院同片区。",
+      },
+      {
         name: "Manly 海滩",
         lat: -33.7969,
         lng: 151.2875,
@@ -339,7 +346,4 @@ function initReveal() {
   els.forEach((el) => io.observe(el));
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  initMap();
-  initReveal();
-});
+document.addEventListener("DOMContentLoaded", initReveal);

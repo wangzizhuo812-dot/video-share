@@ -7,7 +7,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -299,21 +298,119 @@
     <!-- MAPS -->
     <section id="maps" class="section maps">
       <div class="section-head">
-        <h2>地图标注</h2>
-        <p>点击标记看中文说明；切换城市查看对应景点。</p>
+        <h2>静态景点地图</h2>
+        <p>路线和中文景点直接标在图上，无需点击，也不加载外部地图组件。</p>
       </div>
 
-      <div class="map-tabs" role="tablist" aria-label="城市地图切换">
-        <button class="map-tab active" role="tab" aria-selected="true" data-map="sydney">悉尼</button>
-        <button class="map-tab" role="tab" aria-selected="false" data-map="cairns">凯恩斯·礁</button>
-        <button class="map-tab" role="tab" aria-selected="false" data-map="whitsundays">圣灵·可选</button>
-        <button class="map-tab" role="tab" aria-selected="false" data-map="melbourne">墨尔本</button>
-        <button class="map-tab" role="tab" aria-selected="false" data-map="overview">总览</button>
-      </div>
+      <div class="static-map-grid">
+        <figure class="static-map static-map-wide reveal">
+          <figcaption>
+            <strong>澳大利亚总路线</strong>
+            <span>默认路线不含圣灵群岛；虚线是两段国内航班</span>
+          </figcaption>
+          <svg viewBox="0 0 900 430" role="img" aria-labelledby="overview-title overview-desc">
+            <title id="overview-title">澳大利亚十二天路线总览</title>
+            <desc id="overview-desc">悉尼到凯恩斯，再到墨尔本，圣灵群岛为可选支线。</desc>
+            <path class="land" d="M157 78 270 36 421 55 535 24 712 74 802 159 778 257 681 327 555 339 465 405 348 369 221 315 143 221 110 133Z"/>
+            <path class="route-line" d="M704 276 Q600 105 490 99 Q600 225 598 350"/>
+            <path class="option-line" d="M490 99 Q535 117 566 158"/>
+            <g class="map-stop">
+              <circle cx="704" cy="276" r="10"/>
+              <text x="721" y="271">悉尼</text>
+              <text class="sub" x="721" y="291">Day 1–4 · 海港 / 蓝山</text>
+            </g>
+            <g class="map-stop">
+              <circle cx="490" cy="99" r="10"/>
+              <text x="507" y="92">凯恩斯</text>
+              <text class="sub" x="507" y="112">Day 5–8 · 外礁 / 雨林</text>
+            </g>
+            <g class="map-stop">
+              <circle cx="598" cy="350" r="10"/>
+              <text x="615" y="345">墨尔本</text>
+              <text class="sub" x="615" y="365">Day 9–12 · 市区 / 使徒岩</text>
+            </g>
+            <g class="map-stop optional">
+              <circle cx="566" cy="158" r="8"/>
+              <text x="583" y="153">圣灵群岛（可选）</text>
+              <text class="sub" x="583" y="173">与凯恩斯二选一更轻松</text>
+            </g>
+            <text class="ocean-label" x="160" y="185">印度洋</text>
+            <text class="ocean-label" x="742" y="130">珊瑚海</text>
+          </svg>
+        </figure>
 
-      <div class="map-layout">
-        <div id="leaflet-map" class="leaflet-host" role="region" aria-label="景点地图"></div>
-        <aside class="map-legend" id="map-legend" aria-live="polite"></aside>
+        <figure class="static-map reveal">
+          <figcaption>
+            <strong>悉尼 · 海港步行线</strong>
+            <span>Day 1–2 · 市区景点集中，渡轮去 Manly</span>
+          </figcaption>
+          <svg viewBox="0 0 560 430" role="img" aria-labelledby="sydney-title">
+            <title id="sydney-title">悉尼静态景点地图</title>
+            <path class="water" d="M0 0H560V430H0Z"/>
+            <path class="land city-land" d="M0 0H350L319 68 365 120 313 177 349 229 280 287 251 361 199 430H0Z"/>
+            <path class="land city-land" d="M560 0H458L440 92 474 171 448 250 484 335 438 430H560Z"/>
+            <path class="walk-line" d="M246 230 282 199 316 171 294 131 332 92"/>
+            <path class="ferry-line" d="M282 199 Q383 120 475 76"/>
+            <g class="number-stop"><circle cx="246" cy="230" r="14"/><text x="246" y="235">1</text><text class="label" x="86" y="253">The Rocks 岩石区</text></g>
+            <g class="number-stop"><circle cx="282" cy="199" r="14"/><text x="282" y="204">2</text><text class="label" x="94" y="199">环形码头</text></g>
+            <g class="number-stop"><circle cx="316" cy="171" r="14"/><text x="316" y="176">3</text><text class="label" x="332" y="169">悉尼歌剧院</text></g>
+            <g class="number-stop"><circle cx="294" cy="131" r="14"/><text x="294" y="136">4</text><text class="label" x="93" y="132">皇家植物园</text></g>
+            <g class="number-stop"><circle cx="332" cy="92" r="14"/><text x="332" y="97">5</text><text class="label" x="348" y="88">麦考利夫人座椅</text></g>
+            <g class="number-stop optional"><circle cx="475" cy="76" r="14"/><text x="475" y="81">6</text><text class="label" x="391" y="50">Manly 海滩</text></g>
+            <text class="map-note" x="335" y="260">渡轮约 30 分钟 →</text>
+            <text class="water-label" x="360" y="350">悉尼港</text>
+          </svg>
+        </figure>
+
+        <figure class="static-map reveal">
+          <figcaption>
+            <strong>昆士兰 · 看礁或看岛</strong>
+            <span>凯恩斯与圣灵相距约 630 km，不是同一站</span>
+          </figcaption>
+          <svg viewBox="0 0 560 430" role="img" aria-labelledby="queensland-title">
+            <title id="queensland-title">凯恩斯与圣灵群岛静态地图</title>
+            <path class="water" d="M0 0H560V430H0Z"/>
+            <path class="land city-land" d="M0 0H290L319 57 293 110 331 167 307 225 343 286 326 348 366 430H0Z"/>
+            <path class="coast-line" d="M290 0 319 57 293 110 331 167 307 225 343 286 326 348 366 430"/>
+            <path class="option-line" d="M302 92 Q372 220 334 337"/>
+            <g class="map-stop"><circle cx="302" cy="92" r="10"/><text x="115" y="82">凯恩斯</text><text class="sub" x="115" y="103">推荐：外礁一日游</text></g>
+            <g class="map-stop"><circle cx="282" cy="129" r="8"/><text x="100" y="143">库兰达雨林</text></g>
+            <g class="map-stop optional"><circle cx="334" cy="337" r="10"/><text x="116" y="329">Airlie Beach</text><text class="sub" x="116" y="350">圣灵群岛门户</text></g>
+            <g class="map-stop optional"><circle cx="435" cy="310" r="9"/><text x="370" y="278">白天堂沙滩</text><text class="sub" x="370" y="296">坐船 / 水上飞机</text></g>
+            <path class="ferry-line" d="M344 331 Q390 315 435 310"/>
+            <text class="map-note" x="348" y="111">外礁出海 →</text>
+            <text class="water-label" x="402" y="202">大堡礁海域</text>
+            <text class="distance-label" x="342" y="225">约 630 km</text>
+          </svg>
+        </figure>
+
+        <figure class="static-map static-map-wide reveal">
+          <figcaption>
+            <strong>墨尔本 · 市区 + 两个郊外重点</strong>
+            <span>市区靠步行/免费电车；使徒岩与企鹅岛分别报团</span>
+          </figcaption>
+          <svg viewBox="0 0 900 430" role="img" aria-labelledby="melbourne-title">
+            <title id="melbourne-title">墨尔本静态景点地图</title>
+            <path class="land" d="M0 0H900V430H0Z"/>
+            <path class="water" d="M0 282Q165 248 313 290T602 277Q760 248 900 290V430H0Z"/>
+            <path class="road-line" d="M655 222 Q490 200 335 245 Q235 280 92 246"/>
+            <path class="road-line secondary" d="M655 222 Q755 258 825 334"/>
+            <g class="city-cluster">
+              <rect x="587" y="61" width="252" height="142" rx="2"/>
+              <text class="cluster-title" x="607" y="87">墨尔本 CBD · Day 9</text>
+              <text x="607" y="112">① 弗林德斯街车站</text>
+              <text x="607" y="134">② 涂鸦巷 / 联邦广场</text>
+              <text x="607" y="156">③ 皇家拱廊 / 州立图书馆</text>
+              <text x="607" y="178">④ 维多利亚市场</text>
+            </g>
+            <g class="map-stop"><circle cx="655" cy="222" r="11"/><text x="674" y="227">墨尔本</text></g>
+            <g class="map-stop hero-stop"><circle cx="92" cy="246" r="12"/><text x="38" y="218">★ 十二门徒岩</text><text class="sub" x="38" y="237">Day 10 · 朋友强推</text></g>
+            <g class="map-stop optional"><circle cx="825" cy="334" r="10"/><text x="700" y="363">菲利普岛企鹅 · Day 11</text></g>
+            <text class="distance-label" x="320" y="222">沿大洋路约 4 小时</text>
+            <text class="distance-label" x="717" y="274">约 2 小时</text>
+            <text class="water-label" x="399" y="367">南大洋 / 巴斯海峡</text>
+          </svg>
+        </figure>
       </div>
     </section>
 
@@ -386,7 +483,6 @@
     <p>慢游澳洲 · 12 天轻松版 · 仅供行程规划参考，价格随季节浮动</p>
   </footer>
 
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
