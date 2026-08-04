@@ -287,6 +287,97 @@ a {
   background: linear-gradient(transparent, rgba(8, 40, 50, 0.75));
 }
 
+/* FOCUS RESEARCH */
+.focus-block {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  align-items: start;
+  margin-bottom: clamp(2.5rem, 6vw, 3.5rem);
+}
+
+.focus-block.reverse {
+  grid-template-columns: 1fr 1.05fr;
+}
+
+.focus-block.reverse .focus-media {
+  order: 2;
+}
+
+.focus-media {
+  overflow: hidden;
+}
+
+.focus-media img {
+  width: 100%;
+  aspect-ratio: 5 / 4;
+  object-fit: cover;
+}
+
+.focus-body h3 {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+  color: var(--sea-deep);
+  line-height: 1.25;
+}
+
+.verdict {
+  margin: 0 0 1rem;
+  padding: 0.9rem 1rem;
+  background: rgba(10, 124, 140, 0.08);
+  border-left: 3px solid var(--sea);
+  color: var(--ink-soft);
+}
+
+.focus-body ul {
+  margin: 0 0 1rem;
+  padding-left: 1.1rem;
+  color: var(--ink-soft);
+}
+
+.focus-body li {
+  margin-bottom: 0.55rem;
+}
+
+.focus-body li strong {
+  color: var(--ink);
+}
+
+.focus-summary {
+  padding: 1.5rem 1.6rem;
+  background: rgba(255, 255, 255, 0.65);
+  border-left: 3px solid var(--coral);
+}
+
+.focus-summary h3 {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-display);
+  color: var(--sea-deep);
+  font-size: 1.35rem;
+}
+
+.focus-summary ol {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: var(--ink-soft);
+}
+
+.focus-summary li {
+  margin-bottom: 0.45rem;
+}
+
+@media (max-width: 900px) {
+  .focus-block,
+  .focus-block.reverse {
+    grid-template-columns: 1fr;
+  }
+
+  .focus-block.reverse .focus-media {
+    order: 0;
+  }
+}
+
 /* DAYS */
 .day {
   display: grid;
