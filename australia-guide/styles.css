@@ -503,6 +503,38 @@ a {
   text-underline-offset: 2px;
 }
 
+.city-execution {
+  max-width: 1180px;
+}
+
+.city-execution:nth-of-type(even) {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.hour-plan {
+  margin-top: 2rem;
+}
+
+.hour-plan > h3 {
+  margin: 0 0 0.8rem;
+  font-family: var(--font-display);
+  color: var(--sea-deep);
+  font-size: 1.35rem;
+}
+
+.research-link {
+  margin: 1.4rem 0 0;
+  padding: 0.9rem 1rem;
+  color: var(--ink-soft);
+  background: rgba(10, 124, 140, 0.07);
+  border-left: 3px solid var(--sea);
+  font-size: 0.86rem;
+}
+
+.research-link code {
+  color: var(--sea-deep);
+}
+
 @media (max-width: 900px) {
   .transport-strategy .verdict-strip {
     grid-template-columns: 1fr;
